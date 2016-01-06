@@ -22,11 +22,12 @@ public class LoginAction {
     private UserService userService;  
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public Object loginPage(String error, HttpServletRequest request) {
+	public Object loginPage(String error, HttpServletRequest request){
 		ModelAndView model = new ModelAndView();
 		try {
 			model.setViewName("login");
 		} catch (Exception e) {
+			throw new RuntimeException(e);
 		}
 		return model;
 	}
