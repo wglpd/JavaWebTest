@@ -7,7 +7,6 @@
             currentPage: 1,  
             totalPages: $("#userTotalPage").val(),//总页数  
             numberofPages: 5,//显示的页数
-            //bootstrapMajorVersion:3,
             itemTexts: function (type, page, current) {  
                 switch (type) {  
                     case "first":  
