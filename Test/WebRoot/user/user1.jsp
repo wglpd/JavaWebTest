@@ -7,7 +7,7 @@
             currentPage: 1,  
             totalPages: $("#userTotalPage").val(),//总页数  
             numberofPages: 5,//显示的页数
-            //设置版本为3
+            
             itemTexts: function (type, page, current) {  
                 switch (type) {  
                     case "first":  
