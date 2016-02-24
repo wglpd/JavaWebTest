@@ -24,7 +24,7 @@
             onPageClicked: function (event, originalEvent, type, page) {  
                 $.ajax({
                 	type:"POST",
-                	url:"",
+                	url:"./user/getUserData.do",
                 	data:{page:page,take:2},
                 	dataType:"json", 
                 	success: function(data){  

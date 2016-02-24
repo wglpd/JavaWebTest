@@ -16,56 +16,10 @@
 <script src="js/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript">
  $(function () {
- 		/* $.ajax({
-				url : "./user/getUserData.do",
-				type : "POST",
-				dataType : "json",
-				success : function(data) {
-				
-				}
-			}); */
- 
- 
- 
-      /*   var options = {
-            currentPage: 1,//当前页
-            totalPages: $("#userTotalPage").val(),//总页数
-            numberofPages: 5,//显示的页数
-            
-            itemTexts: function(type, page, current) { //修改显示文字
-                switch (type) {
-                case "first":
-                    return "第一页";
-                case "prev":
-                    return "上一页";
-                case "next":
-                    return "下一页";
-                case "last":
-                    return "最后一页";
-                case "page":
-                    return page;
-                }
-            }, onPageClicked: function (event, originalEvent, type, page) { //异步换页
-                $.post("./user/getUserData.do",{page:page,take:2},function(data) {
-                    //$("#userTable").html(data);
-                });
-            },
-                    
-    }; */
+ 		$('#tab0').load("./user/getUserData.do");
     });
     
 function showPage(tabId, url){
-	//alert("111");
-    //alert(url);
-      /* $('#tt').on("click", function() {
-            addTab({
-                id: 'tt',
-                title: 'alexchen',
-                close: true,
-                content: 'http://www.baidu.com'
-            });
-        }); */
-        //title = '<li role="presentation" id="tab_' + id + '"><a href="#' + id + '" aria-controls="' + id + '" role="tab" data-toggle="tab">' + 用户列表 + '</a></li>';
         $('#'+tabId).load(url); 
   }
 </script>
@@ -111,14 +65,13 @@ function showPage(tabId, url){
         </div>
         
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-		<ul class="nav nav-tabs" role="tablist" id="myTab">
+		<!-- <ul class="nav nav-tabs" role="tablist" id="myTab">
             <li role="presentation" >
                 <a href="#home" aria-controls="home" role="tab" data-toggle="tab">主页</a></li>
-        </ul>
+        </ul> -->
     		
     		<div class="tab-content" id="tt">
-    			<!-- <div class="tab-pane " id="home">123</div> -->
-  				<div class="tab-pane active" id="tab0"></div>
+  				<div class="tab-pane active" id="tab0" title="用户管理"></div>
   				<div class="tab-pane" id="tab1"></div>
   				<div class="tab-pane" id="tab2"></div>
   				<div class="tab-pane" id="tab3"></div>
