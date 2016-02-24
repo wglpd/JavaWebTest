@@ -1,7 +1,9 @@
 package com.cn.lpd.user.web;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -39,5 +41,20 @@ public class UserAction {
     	model.addObject("total", list.size());
     	model.setViewName("user/user");
         return model;
+    }
+    
+    @RequestMapping(value = "/getUserData", method = RequestMethod.POST)
+    public Object getlistData(HttpServletRequest request){
+    	Map<String, Object> resultMap = new HashMap<String, Object>();
+    	try{
+    	List<User> list =  userService.findAllUser();
+    	resultMap.put("list", list);
+    	resultMap.put("total", list.size());
+    	resultMap.put("result", 1);
+    	}catch (Exception se) {
+			resultMap.put("result", 0);
+			resultMap.put("message", se.getMessage());
+		}
+        return resultMap;
     }
 }
